@@ -1,0 +1,438 @@
+/* Reseta os estilos padrão e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Cores e variáveis principais */
+:root {
+    --bg-color: rgb(255, 255, 255);
+    --second-bg-color: #f7f2f2;
+    --text-color: #131313;
+    --main-color: #050a30;
+}
+
+/* Configurações da página HTML */
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+/* Configurações do corpo da página */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Estilo do cabeçalho */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background: rgba(255, 255, 255, 0.144);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+/* Estilo do logo */
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    text-shadow: 0 0 25px var(--main-color);
+}
+
+/* Estilo da navegação principal */
+.navbar {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+
+/* Estilo do menu móvel */
+.menu-mobile {
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.menu-mobile.open {
+    width: 70%;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: block;
+}
+
+.menu-mobile .btn-fechar i {
+    color: white;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+    list-style: none;
+}
+
+.menu-mobile nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: #050a30;
+    color: #000;
+}
+
+/* Sobreposição escura do menu móvel */
+.overlay-menu {
+    background-color: #000000df;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+}
+
+/* Estilo do ícone do menu */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+/* Estilo das seções */
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+/* Estilo da seção home */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.home-content h2 {
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+}
+
+.home-content h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+    color: #946717;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #946717;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px #946717,
+                0 0 50px #946717,
+                0 0 100px #946717;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+}
+
+/* Estilo dos botões */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: rgb(255, 253, 253);
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.btn-group a:nth-of-type(2) {
+    background-color: rgb(255, 253, 253);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 25px transparent;
+}
+
+.btn-group a:nth-of-type(2):hover {
+    box-shadow: 0 0 25px var(--main-color);
+    background-color: var(--main-color);
+    color: rgb(255, 253, 253);
+}
+
+/* Animação de texto */
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.text-animation span {
+    position: relative;
+}
+
+.text-animation span::before {
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+
+.text-animation span::after {
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+/* Estilo da seção de objetivos */
+.objetivos {
+    background: var(--bg-color);
+    color: black;
+    padding: 5rem 0; /* Espaço ao redor da seção */
+}
+
+.objetivos h2.heading {
+    margin-bottom: 5rem;
+    color: var(--main-color); /* Cor do título */
+    text-align: center; /* Centraliza o título */
+    font-size: 3rem; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.objetivos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1300px; /* Limite máximo de largura */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 2rem; /* Padding horizontal */
+}
+
+.objetivos-box {
+    background-color: #050a30;
+    height: 300px;
+    border-radius: 3rem;
+    border: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Alinhamento vertical dos itens */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    padding: 2rem; /* Padding interno */
+    color: #fff; /* Cor do texto */
+    text-align: center; /* Centraliza o texto dentro do box */
+}
+
+.objetivos-box:hover {
+    background: white;
+    color: #131313;
+    border: 5px solid var(--main-color);
+    transform: scale(1.03);
+}
+
+.objetivos-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Alinha o conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto */
+    height: 100%; /* Garante que ocupe toda a altura do box */
+    padding: 1rem; /* Padding interno para evitar que o texto toque nas bordas */
+}
+
+.objetivos-info h4 {
+    font-size: 1.6rem; /* Tamanho do título */
+    font-weight: 800;
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+}
+
+.objetivos-info p {
+    font-size: 1.4rem; /* Tamanho do texto */
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0; /* Remove a margem padrão */
+    overflow: hidden; /* Esconde o texto que ultrapassa */
+    text-overflow: ellipsis; /* Adiciona reticências ao final do texto, se necessário */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%; /* Reduz o tamanho base da fonte para telas menores */
+    }
+
+    header {
+        padding: 2rem 5%; /* Reduz o padding para melhor adaptação em telas menores */
+    }
+
+    .logo {
+        font-size: 2.5rem; /* Ajusta o tamanho da fonte do logo */
+    }
+
+    .navbar {
+        display: none; /* Esconde a barra de navegação em dispositivos móveis */
+    }
+
+    #menu-icon {
+        display: block; /* Exibe o ícone de menu em dispositivos móveis */
+    }
+
+    .menu-mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        width: 0;
+        overflow: hidden;
+        transition: width 0.5s ease;
+    }
+
+    .menu-mobile.open {
+        width: 100%;
+    }
+
+    section {
+        padding: 5rem 5%; /* Reduz o padding para se ajustar a telas menores */
+    }
+
+    .home {
+        flex-direction: column-reverse; /* Ajusta a direção dos itens no layout */
+        gap: 5rem; /* Reduz o espaço entre os itens */
+    }
+
+    .home-content h1 {
+        font-size: 3rem; /* Ajusta o tamanho da fonte do título */
+    }
+
+    .home-img img {
+        width: 80%; /* Ajusta a largura da imagem para dispositivos móveis */
+        max-width: none; /* Remove o limite máximo da largura da imagem */
+    }
+
+    .btn {
+        font-size: 1.4rem; /* Reduz o tamanho da fonte dos botões */
+        padding: 0.8rem 2rem; /* Ajusta o padding dos botões */
+    }
+
+    .objetivos {
+        padding: 3rem 1rem; /* Reduz o padding para dispositivos móveis */
+    }
+
+    .objetivos-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta o grid para uma coluna em telas menores */
+        padding: 0; /* Remove o padding horizontal */
+    }
+
+    .objetivos-box {
+        height: 250px; /* Ajusta a altura dos boxes de objetivos */
+        font-size: 1.4rem; /* Reduz o tamanho da fonte */
+    }
+
+    .objetivos-info h4 {
+        font-size: 2rem; /* Reduz o tamanho da fonte dos títulos dentro dos boxes */
+    }
+
+    .objetivos-info p {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte do texto */
+    }
+}
